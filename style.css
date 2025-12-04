@@ -1,90 +1,128 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
 }
-.container{
+
+body {
     width: 100%;
-    height: 100vh;
-    background: linear-gradient(to right bottom , #ebf4f5 , #b5c6e0);
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
-.form-box{
-    width: 50%;
-    max-width: 400px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px 28px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-inline: 20px;
-}
-.form-box header h1{
+
+.game-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     text-align: center;
-    color: #5851e3;
-}
-.form-box form{
-    margin-block: 30px;
-}
-input{
+    max-width: 900px;
     width: 100%;
-    padding: 18px 16px;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    background-color: #a3a3a3;
-    font-size: 16px;
-    margin: 12px 0;
 }
-input[type="text"]{
-    display: none;
+
+h1 {
+    color: #667eea;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
-a{
-    text-decoration: none;
-    color: #767676;
-    font-size: 14px;
-}
-input[type="button"]{
-    margin-block: 24px;
-    background-color: #5851e3;
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: 700;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0,4s;
-}
-input[type="button"]:hover{
-    background-color: #10449a;
-}
-.links{
+
+.score-board {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    color: white;
 }
-.links a img{
-    max-height: 70px;
-    margin-inline: 10px;
+
+.player-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
 }
-signup{
-    text-align: center;
-    margin-block: 20px;
+
+.player-score span:first-child {
+    font-weight: bold;
+    margin-bottom: 5px;
 }
-.signup a{
-    font-size: 16px;
-    font-weight: 700;
-    color: #5851e3;
+
+.player-score span:last-child {
+    font-size: 2em;
+    font-weight: bold;
 }
-.signup  a:hover{
-    color: #10449a;
-    text-decoration: double 2px;
-    text-underline-offset: 3.5px;
+
+#gameCanvas {
+    display: block;
+    margin: 0 auto 20px;
+    background-color: #1a1a2e;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
 }
-@media screen and (max-width:700px) {
-     .form-box{
-         width: 100%;
-     }
+
+.controls {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.controls p {
+    margin: 8px 0;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.controls strong {
+    color: #667eea;
+}
+
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 5px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 700px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .score-board {
+        font-size: 0.9em;
+    }
+    
+    .controls {
+        font-size: 0.85em;
+    }
+    
+    button {
+        padding: 10px 30px;
+        font-size: 1em;
+    }
 }
 
